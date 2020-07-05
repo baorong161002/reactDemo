@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta content="0" http-equiv="Expires">
-    <meta content="no-cache" http-equiv="Pragma">
-    <meta content="no-cache" http-equiv="Cache-control">
-    <meta content="no-cache" http-equiv="Cache">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/snowman.ico" />
+    <meta content="0" http-equiv="Expires" />
+    <meta content="no-cache" http-equiv="Pragma" />
+    <meta content="no-cache" http-equiv="Cache-control" />
+    <meta content="no-cache" http-equiv="Cache" />
+    <meta name="referrer" content="no-referrer" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -26,7 +27,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React Admin Example</title>
+    <title>基于React的后台管理系统</title>
 
     <style type="text/css">
       #Loading {
@@ -97,7 +98,6 @@
       </div>
     </div>
 
-
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -111,23 +111,27 @@
   </body>
 
   <script>
-    window.onload=function () {
-      document.addEventListener('touchstart',function (event) {
-        if(event.touches.length>1){
+    window.onload = function() {
+      document.addEventListener("touchstart", function(event) {
+        if (event.touches.length > 1) {
           event.preventDefault();
         }
       });
-      var lastTouchEnd=0;
-      document.addEventListener('touchend',function (event) {
-        var now=(new Date()).getTime();
-        if(now-lastTouchEnd<=300){
-          event.preventDefault();
-        }
-        lastTouchEnd=now;
-      },false);
-      document.addEventListener('gesturestart', function (event) {
+      var lastTouchEnd = 0;
+      document.addEventListener(
+        "touchend",
+        function(event) {
+          var now = new Date().getTime();
+          if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+          }
+          lastTouchEnd = now;
+        },
+        false
+      );
+      document.addEventListener("gesturestart", function(event) {
         event.preventDefault();
       });
-    }
+    };
   </script>
 </html>
